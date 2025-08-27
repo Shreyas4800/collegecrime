@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber Safety Portal — SIT Institute</title>
+  <meta name="description" content="XYZ Institute's Cyber Safety Portal: report incidents, learn safety practices, and reach campus cyber cell." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span aria-hidden class="logo">🛡️</span>
+        <span>SIT Institute <small>Cyber Safety Portal</small></span>
+      </a>
+      <nav style="display:flex; gap:4px; align-items:center">
+        <a class="link" href="#report">Report</a>
+        <a class="link" href="#awareness">Awareness</a>
+        <a class="link" href="#resources">Resources</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="cta" href="#report">Report Incident</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="banner" role="status" aria-live="polite">
+      <span class="badge">Campus Cyber Cell</span>
+      <span style="color:var(--muted)">This portal is for <strong>SIT Institute</strong> students, faculty & staff only. For national-level complaints, please use the official government portal.</span>
+    </div>
+
+    <section class="hero">
+      <div>
+        <h1>Report Cyber Incidents. Learn. Stay Safe.</h1>
+        <p>Quickly report phishing, harassment, hacked accounts, or data loss to the Institute's Cyber Cell. Get verified resources, campus helplines, and workshop schedules.</p>
+        <div class="actions">
+          <a class="btn primary" href="#report">Start a Report</a>
+          <a class="btn secondary" href="#awareness">Best Practices</a>
+        </div>
+        <div class="grid cols-3" style="margin-top:18px">
+          <div class="card kpi">
+            <div class="icon" aria-hidden>🔐</div>
+            <div>
+              <div class="value">2FA Toolkit</div>
+              <div class="meta">Step-by-step setup guides</div>
+            </div>
+          </div>
+          <div class="card kpi">
+            <div class="icon" aria-hidden>🧑‍⚖️</div>
+            <div>
+              <div class="value">Campus Policy</div>
+              <div class="meta">Code of conduct & IT rules</div>
+            </div>
+          </div>
+          <div class="card kpi">
+            <div class="icon" aria-hidden>📞</div>
+            <div>
+              <div class="value">24×7 Helpline</div>
+              <div class="meta">+91-99999 00000 (Security)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="padding:18px">
+        <div class="notice" style="margin-bottom:12px">
+          <span class="tag">URGENT</span>
+          <span>Account compromised? Immediately change password, enable 2FA, and file a report below.</span>
+        </div>
+        <form id="report" class="report" action="#" method="post" aria-describedby="report-help">
+          <h2 style="margin:0">Report an Incident</h2>
+          <p id="report-help" class="helper">This form notifies the Institute's Cyber Cell. Fields marked * are required. Do not share OTPs or full card numbers.</p>
+
+          <div class="field">
+            <label for="category">Category *</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option>Phishing / Scam</option>
+              <option>Online Harassment</option>
+              <option>Hacked Account</option>
+              <option>Financial Fraud (UPI/Card)</option>
+              <option>Data Loss / Malware</option>
+              <option>Impersonation / Fake Profile</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" placeholder="Optional if reporting anonymously" />
+            </div>
+            <div class="field">
+              <label for="email">Institute Email</label>
+              <input id="email" name="email" type="email" placeholder="name@xyz.edu" />
+            </div>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="phone">Mobile</label>
+              <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="10-digit number" />
+              <span class="helper">Only digits, no spaces.</span>
+            </div>
+            <div class="field">
+              <label for="roll">Roll / Staff ID</label>
+              <input id="roll" name="roll" placeholder="e.g. 23CSE045" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="details">What happened? *</label>
+            <textarea id="details" name="details" required placeholder="Describe the incident, links, handles, app names, time, any money lost, screenshots, etc."></textarea>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="date">Incident Date *</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+            <div class="field">
+              <label for="loss">Approx. Loss (₹)</label>
+              <input id="loss" name="loss" type="number" min="0" step="1" placeholder="0" />
+            </div>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="evidence">Evidence</label>
+              <input id="evidence" name="evidence" type="file" />
+              <span class="helper">Screenshots, PDFs, or logs (max 10MB)</span>
+            </div>
+            <div class="field">
+              <label for="platform">Platform</label>
+              <input id="platform" name="platform" placeholder="Instagram, UPI app, Email, etc." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label><input type="checkbox" name="anonymous" /> Submit anonymously</label>
+            <span class="helper">If checked, personal details above are optional. Response may be limited.</span>
+          </div>
+
+          <div class="field">
+            <label><input type="checkbox" name="consent" required /> I confirm that the information provided is true to the best of my knowledge. *</label>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <button class="btn primary" type="submit">Submit Report</button>
+            <a class="btn" href="#status">Check Status (with Case ID)</a>
+            <span class="pill" aria-hidden>🔒 End-user data kept within Institute</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="awareness">
+      <h2>Cyber Awareness</h2>
+      <p class="lead">Essential steps to protect yourself online. Share with your friends and classmates.</p>
+      <div class="grid cols-3">
+        <div class="card resources item">
+          <h3>Enable 2-Factor Authentication</h3>
+          <p class="helper">Turn on 2FA for email, banking, and social media. Prefer authenticator apps over SMS.</p>
+        </div>
+        <div class="card resources item">
+          <h3>Spot Phishing</h3>
+          <p class="helper">Check sender domain, avoid urgent money/OTP requests, hover links before clicking.</p>
+        </div>
+        <div class="card resources item">
+          <h3>Secure Devices</h3>
+          <p class="helper">Use strong passcodes, auto-updates, and device encryption. Never install cracked apps.</p>
+        </div>
+        <div class="card resources item">
+          <h3>Privacy on Social Media</h3>
+          <p class="helper">Limit public info. Disable contact syncing and location history where not needed.</p>
+        </div>
+        <div class="card resources item">
+          <h3>Financial Safety</h3>
+          <p class="helper">Never share UPI PIN/OTP. Verify handles. Use in-app support for disputes.</p>
+        </div>
+        <div class="card resources item">
+          <h3>Report & Preserve Evidence</h3>
+          <p class="helper">Take screenshots, note timestamps, keep emails/SMS. Report promptly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <h2>Helpful Resources</h2>
+      <div class="grid cols-3">
+        <div class="card" style="padding:16px">
+          <h3>Campus Contacts</h3>
+          <ul class="helper" style="margin-top:8px">
+            <li>Cyber Cell: cybercell@xyz.edu</li>
+            <li>Security Desk (24×7): +91-99999 00000</li>
+            <li>Counselling Centre: +91-88888 11111</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3>Workshops</h3>
+          <ul class="helper" style="margin-top:8px">
+            <li>Phishing Simulation — First Monday each month</li>
+            <li>Privacy Hygiene 101 — Every Friday, 5pm</li>
+            <li>Secure Coding Club — Saturdays, 11am</li>
+          </ul>
+        </div>
+        <div id="status" class="card" style="padding:16px">
+          <h3>Check Report Status</h3>
+          <p class="helper">If you have a Case ID from the confirmation email, enter it below.</p>
+          <form>
+            <label class="sr-only" for="case">Case ID</label>
+            <input id="case" name="case" placeholder="e.g. XYZ-2025-000123" />
+            <div style="height:8px"></div>
+            <button class="btn" type="button">Lookup (demo)</button>
+            <p class="helper">* Demo only. Requires backend integration.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq">
+        <summary>Is this portal a government website?</summary>
+        <p>No. This is an Institute-only portal for awareness and preliminary reporting. For national-level complaints, use the official government portal.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I report anonymously?</summary>
+        <p>Yes. However, investigation and response may be limited without contact details.</p>
+      </details>
+      <details class="faq">
+        <summary>What happens after I submit a report?</summary>
+        <p>Your report is assigned a Case ID and shared with the campus Cyber Cell. They may contact you for more details.</p>
+      </details>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="grid cols-3">
+        <div>
+          <div class="brand"><span class="logo" aria-hidden>🛡️</span>XYZ Institute</div>
+          <p class="helper">Promoting a safe digital environment for our campus community.</p>
+        </div>
+        <div>
+          <h3 style="margin:0 0 8px">Contact</h3>
+          <ul class="helper" style="margin-top:8px">
+            <li>Email: cybercell@xyz.edu</li>
+            <li>Security Desk: +91-99999 00000</li>
+            <li>Address: Main Admin Block, XYZ Institute</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin:0 0 8px">Legal</h3>
+          <p class="helper">This site provides guidance only and does not replace official law-enforcement processes. In emergencies, contact local police immediately.</p>
+        </div>
+      </div>
+      <p class="helper" style="margin-top:18px">© <span id="year">2025</span> XYZ Institute Cyber Safety Portal</p>
+    </div>
+  </footer>
+</body>
+</html>
